@@ -12,8 +12,12 @@ const {
 } = require('@strapi/utils');
 const { getService } = require('../utils');
 
-const FORMATS_TO_PROCESS = ['jpeg', 'png', 'webp', 'tiff', 'svg', 'gif', 'avif'];
-const FORMATS_TO_OPTIMIZE = ['jpeg', 'png', 'webp', 'tiff', 'avif'];
+// Removed png from optimisation list
+// const FORMATS_TO_PROCESS = ['jpeg', 'png', 'webp', 'tiff', 'svg', 'gif', 'avif'];
+// const FORMATS_TO_OPTIMIZE = ['jpeg', 'png', 'webp', 'tiff', 'avif'];
+
+const FORMATS_TO_PROCESS = ['jpeg', 'webp', 'tiff', 'svg', 'gif', 'avif'];
+const FORMATS_TO_OPTIMIZE = ['jpeg', 'webp', 'tiff', 'avif'];
 
 const writeStreamToFile = (stream, path) =>
   new Promise((resolve, reject) => {
